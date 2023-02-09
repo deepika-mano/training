@@ -1,0 +1,45 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: white;
+  background-color: rgb(1, 2, 2);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 50px;
+}
+
+select {
+  font-size: 18px;
+  background-color: rgb(252, 248, 247);
+}
+form {
+  border: 3px solid rgb(243, 236, 236);
+  padding: 80px 80px;
+  border-radius: 30px;
+  margin: 80px 80px;
+}
+.txt {
+  height: 25px;
+  margin: 5px 5px;
+  width: 60%;
+}
+legend {
+  color: rgb(247, 248, 246);
+  font-size: 25px;
+}
+label {
+  color: rgb(245, 237, 237);
+  font-size: 20px;
+}
+h1 {
+  color: #cb2121;
+  text-decoration: underline;
+}
+.btn {
+  font-size: 25px;
+  padding: 10px 10px;
+  border-radius: 20px;
+  margin-left: 860px;
+  color: aliceblue;
+  background-color: rgb(210, 33, 33);
+}
