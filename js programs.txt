@@ -1,0 +1,115 @@
+WEEK 2 TASK 
+
+Q-1  Welcome to this Javascript Guide! 
+
+let str =prompt("Enter a string:");
+let reverse = str.split("").reverse().join('').split(" ").reverse().join(' ');
+        console.log(reverse);
+
+Q-2  How to empty an array in JavaScript?
+
+var arrayList = ['a', 'b', 'c', 'd', 'e', 'f'];
+console.log(arrayList);
+while(arrayList.length){
+    arrayList.pop();
+}
+console.log(arrayList);
+console.log(arrayList.length);
+
+Q-3 Implement enqueue and dequeue using only two stacks
+
+var s1 = [];
+var s2 = [];
+function enqueue(ele) {
+        s1.push(ele);
+        console.log(s1);
+    }
+function dequeue() {
+    if (s2.length === 0 && s1.length === 0) {
+                console.log("Stacks are empty");
+            }
+          if(s1.length > 0) {
+                let x = s1.pop();
+                s2.push(x);
+        }
+    }
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+    dequeue();
+    dequeue();
+    console.log("Elements in stack1:"+s1);
+    console.log("Elements in stack2:"+s2);
+
+
+Q-4   Create a for loop that iterates up to 100 while outputting "fizz" at 
+multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples 
+of 3 and 5.
+
+for(var i=1;i<=100;i++){
+    if(i%3==0 && i%5==0){
+        console.log("fizzbuzz");
+    }
+    else if(i%5==0){
+        console.log("buzz");
+    }
+    else if(i%3==0){
+        console.log("fizz");
+    }
+    else{
+        console.log(i);
+    }
+}
+
+
+Q-5  Given two strings, return true if they are anagrams of one another
+
+var str1=prompt("Enter first string:");
+var str2=prompt("Enter second string:");
+str1=str1.toLowerCase();
+str2=str2.toLowerCase();
+if(str1.length===str2.length){
+    str1=str1.split('').sort().join('');
+    str2=str2.split('').sort().join('');
+    if(str1===str2){
+        console.log("Anagram");
+        }
+    else{
+            console.log("Not an Anagram");
+        }
+}
+else{
+    console.log("Not an Anagram");
+}
+
+Q-6   Valid Name
+
+var name=prompt("Enter a name:");
+var f=0;
+var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+if(name.length<1){
+    console.log("Please enter a valid name.");
+}
+var arr=name.split(' ');
+if(arr.length==1){
+    console.log("Name not valid.")
+}
+
+else if(arr.length>1){
+var a=name.split('');
+for(var b=0;b<a.length;b++){
+    if((a[b]==" ") && (a[b-1]==".")){
+        f=1;
+    }
+    else if((a[b]==".") && (regName.test(a[b+1]))){
+        f=1;
+    }
+}
+}
+if(f==1){
+    console.log("Valid");
+}
+else if(f==0){
+    console.log("Not  Valid");
+}
+
