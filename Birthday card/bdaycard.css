@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  transition: all 0.2s ease-in-out;
+}
+body {
+  margin: 20px;
+  background: hsl(323, 40%, 66%);
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  position: absolute;
+  top: 300px;
+  left: 1350px;
+}
+.bln {
+  position: absolute;
+  top: 240px;
+  left: 290px;
+}
+.txt {
+  position: absolute;
+  top: 600px;
+  left: 460px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 5px;
+  margin-left: 100px;
+  height: 75vh;
+  width: 90vw;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em;
+  overflow: auto;
+}
+.card {
+  flex-direction: row-reverse;
+}
+.card img.birthday {
+  width: 100%;
+  max-width: 1200px;
+  max-height: 600px;
+}
+
+.muted {
+  opacity: 0.8;
+}
+h1 {
+  font-size: 60px;
+  color: rgb(58, 45, 53);
+}
+h2 {
+  font-size: 40px;
+}
+h4 {
+  font-size: 20px;
+}
+.balloon {
+  display: inline-block;
+  width: 120px;
+  height: 145px;
+  background: hsl(215, 50%, 65%);
+  border-radius: 80%;
+  position: relative;
+  box-shadow: inset -10px -10px 0 rgba(15, 15, 15, 0.07);
+  margin: 10px 30px;
+  transition: transform 0.5s ease;
+  z-index: 10;
+  animation: balloons 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes balloons {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+
+.balloon:before {
+  content: '▲';
+  font-size: 20px;
+  color: hsl(215, 30%, 50%);
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: -12px;
+  z-index: 100;
+}
+
+.balloon:after {
+  display: inline-block;
+  top: 153px;
+  position: absolute;
+  height: 250px;
+  width: 1px;
+  margin: 0 auto;
+  content: '';
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.balloon:nth-child(2) {
+  background: hsl(245, 40%, 65%);
+  animation-duration: 3.5s;
+}
+.balloon:nth-child(2):before {
+  color: hsl(245, 40%, 65%);
+}
+
+.balloon:nth-child(3) {
+  background: hsl(139, 50%, 60%);
+  animation-duration: 3s;
+}
+.balloon:nth-child(3):before {
+  color: hsl(139, 30%, 50%);
+}
+
+.balloon:nth-child(4) {
+  background: hsl(59, 50%, 58%);
+  animation-duration: 4.5s;
+}
+.balloon:nth-child(4):before {
+  color: hsl(59, 30%, 52%);
+}
+
+.balloon:nth-child(5) {
+  background: hsl(23, 55%, 57%);
+  animation-duration: 5s;
+}
+.balloon:nth-child(5):before {
+  color: hsl(23, 44%, 46%);
+}
+
+.sparkles {
+  font-size: 30px;
+  animation-timing-function: ease-out;
+  animation-name: anime;
+  animation-duration: 6s;
+  position: relative;
+}
+@keyframes anime {
+  0% {
+    top: 160px;
+  }
+  20% {
+    top: 220px;
+  }
+  40% {
+    top: 580px;
+  }
+  60% {
+    top: 740px;
+  }
+  80% {
+    top: 890px;
+  }
+  100% {
+    top: 1040px;
+  }
+}
