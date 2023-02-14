@@ -1,0 +1,67 @@
+JAVASCRIPT PROGRAMS -2
+
+Q1.Binary Search
+
+function binSearch (arr, start, end, num){
+   const mid = Math.floor((start+end)/2);
+   if(start <= end){
+      if(arr[mid] === num){
+         return true;
+      }
+      if(num < arr[mid]){
+         return binSearch(arr, start, mid-1, num);
+      }
+      if(num > arr[mid]){
+         return binSearch(arr, mid+1, end, num);
+      }
+   }
+   return false;
+};
+var size,arr=[];
+size=prompt("Enter array size:");
+for(var i=0;i<size;i++){
+    arr[i]=prompt("Enter element:");
+}
+console.log(arr);
+const x=prompt("Enter an element to be searched:")
+arr=arr.sort();
+if(binSearch(arr, 0, arr.length-1, x)){
+    console.log("Element Found!");
+}
+else{
+    console.log("Element  not Found!");
+}
+
+Q2. Oddish or Evenish
+
+function oddishorevenish(n){
+var sum = 0;
+while (n) {
+    sum += n % 10;
+    n = Math.floor(n / 10);
+}
+if(sum%2==0){
+console.log("evenish");
+   
+}
+else{
+    console.log("oddish");
+}
+}var n=prompt("Enter any number:");
+oddishorevenish(n)
+var n=prompt("Enter any number:");
+oddishorevenish(n)
+
+Q3. function merge(...arrays) {
+        let mergedArray = [];
+  
+        arrays.forEach(array => {
+            mergedArray = mergedArray.concat(array)
+        });
+  
+        return mergedArray;
+    }
+let nums1 = [1, 2, 3];
+let nums2 = [4, 5];
+let nums3 = [6, 7];
+    console.log(merge(nums1, nums2,nums3));
