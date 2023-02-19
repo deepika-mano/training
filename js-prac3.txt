@@ -1,0 +1,186 @@
+Q1.
+forEach:forEach works as a traditional for loop looping over the array and providing you array elements to do operations on them.
+filter: filter executes the callback and check its return value. filter does not update the existing array it will return a new filtered array.
+map: generate a new array based on your existing array.map modifies the array elements and save them into the new array.
+reduce:reduce the array to one single value.2 parameters:acc,cur.
+
+Q2.
+const names = ['Alice', 'Bob', 'Charlie', 'Dave','Eric'];
+names.forEach(name => console.log(name));
+
+Q3.
+ const numbers = [1, 2, 3, 4, 5];
+ const squares = numbers.map((num) => {
+    return num ** 2;
+ });
+ console.log(squares);
+
+Q4.
+const filterE = (countries) => {
+  const couE = countries.filter((country) => country.startsWith("E"));
+  return couE;
+};
+  const countries = ["Europe", "Finland", "England","Sweden", "Egypt","Iraq","Norway"];
+  console.log(filterE(countries));
+
+Q5.
+const getStringLists = (array) => {
+    const type = array.filter((item) => typeof item == "string");
+    return type;
+};
+const array = ["Europe",1, "Finland",4,"Sweden","Egypt", 9,6,"Iraq","Norway",10,];
+console.log(getStringLists(array));
+
+Q6.
+ const countries=['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway','IceLand']
+ const conc = countries.reduce((acc, curr, curri) => {
+        if (curri == 0) {
+          return curr + " ";
+        } else if (curri == countries.length - 1) {
+          return acc + ", and " + curr;
+        } else {
+          return acc + ", " + curr;
+        }
+      });
+      const sent = conc + " are north European countries.";
+      console.log(sent);
+Q7.
+
+Q8.
+const constants = [2.71828, 3.14159, 9.81, 98.6, 100];
+const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants;
+console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp);
+
+Q9.
+const newset = new Set();
+console.log(newset);
+
+Q10.
+const newset = new Set();
+for (var i = 0; i <=10; i++) {
+newset.add(i);
+}
+console.log(newset);
+
+Q11.
+const newset = new Set();
+for (var i = 0; i <= 10; i++) {
+newset.add(i);
+}
+console.log(newset);
+newset.delete(10);
+console.log(newset);
+
+Q12.
+const newset = new Set();
+for (var i = 0; i <= 10; i++) {
+newset.add(i);
+}
+console.log(newset);
+newset.clear()
+console.log(newset);
+
+Q13.
+const names = ["Alice", "Bob", "Charlie", "Dave", "Eric"];
+      const res = new Set(names);
+      console.log(res);
+
+Q14.
+ const names = {
+        Alice: 5,
+        Bob: 3,
+        Charlie: 6,
+        Dave: 4,
+        Eric: 4,
+      };
+      console.log(names);
+
+Q15.
+const a = [4, 5, 8, 9];
+      const b = [3, 4, 5, 7];
+      const A = new Set(a);
+      const B = new Set(a);
+      const union = Array.from(a.concat(b));
+      console.log(union);
+
+Q16.
+const a = [4, 5, 8, 9];
+      const b = [3, 4, 5, 7];
+      const A = new Set(a);
+      const B = new Set(b);
+      const c = [...a, ...b];
+      console.log(new Set(c));
+
+Q17.
+const a = [4, 5, 8, 9];
+      const b = [3, 4, 5, 7];
+      const A = new Set(a);
+      const B = new Set(b);
+      const c = a.filter((num) => B.has(num));
+      console.log(new Set(c));
+
+Q18.
+ const a = [4, 5, 8, 9];
+      const b = [3, 4, 5, 7];
+      const A = new Set(a);
+      const B = new Set(b);
+      const c = a.filter((num) => !B.has(num));
+      console.log(new Set(c));
+
+
+INHERITANCE - POLYMORPHISM
+
+Q1.
+class Shape {
+        constructor(color = "Transparent") {
+          this.color = color;
+          this.type = "Shape";
+        }
+        describe() {
+          console.log(`A ${this.color} ${this.type}`);
+        }
+      }
+      class Square extends Shape {
+        constructor(color, sideLength) {
+          super(color);
+          this.sideLength = sideLength;
+          this.type = "Square";
+        }
+        area() {
+          return this.sideLength * this.sideLength;
+        }
+      }
+      class Rectangle extends Shape {
+        constructor(color, width, height) {
+          super(color);
+          this.width = width;
+          this.height = height;
+          this.type = "Rectangle";
+        }
+        area() {
+          return this.width * this.height;
+        }
+      }
+      const square = new Square("blue", 5);
+      const rectangle = new Rectangle("red", 5, 6);
+      console.log(square.area());
+      console.log(rectangle.area());
+      for (const shape of [square, rectangle]) {
+        shape.describe();
+      }
+
+ENCAPSULATION - STATIC
+
+Q2.
+ class Utilities {
+        static camelCase(str) {
+          return str
+            .trim()
+            .toLowerCase()
+            .replace(/[\W_]+(.)/g, (match, chr) => chr.toUpperCase());
+        }
+      }
+      console.log(Utilities.camelCase("hello there"));
+      console.log(Utilities.camelCase("HELLO THERE"));
+      console.log(Utilities.camelCase("I love cookies"));
+      console.log(Utilities.camelCase("Monkey Banana"));
