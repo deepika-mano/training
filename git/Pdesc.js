@@ -1,5 +1,6 @@
 import "./Pdesc.css";
 import Button from "./Button.js";
+import PriceTag from "./PriceTag.js";
 
 function Pdesc() {
   return (
@@ -19,6 +20,7 @@ function Pdesc() {
         1927. After its appearance in Scribner's, the story was published in Men
         Without Women.
         <center>
+          <PriceTag />
           <Button />
         </center>
       </p>
